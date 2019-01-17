@@ -1032,7 +1032,7 @@
             return found;
         };
         // Each Utility
-        var each = forEach = function(obj, iterator, context) {
+        var each = function(obj, iterator, context) {
             if (obj == null) return;
             if (nativeForEach && obj.forEach === nativeForEach) {
                 obj.forEach(iterator, context);
@@ -1048,6 +1048,7 @@
                 }
             }
         };
+	var forEach = each;
         // Extend Utiltiy
         var extend = function(obj) {
             each(slice.call(arguments, 1), function(source) {
